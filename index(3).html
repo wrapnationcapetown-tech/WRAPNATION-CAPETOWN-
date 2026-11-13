@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0c">
+  <title>WRAPNATION | Your Ride. Your Vision.</title>
+  <meta name="description" content="WRAPNATION — premium vehicle wraps, paint protection film, custom decals and automotive styling in Cape Town and surrounding areas.">
+  <style>
+    :root{--bg:#090a0c;--panel:#111317;--text:#f5f5f4;--muted:#a5a8ad;--line:rgba(255,255,255,.13);--silver:#c9cdd2;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button{font:inherit}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{max-width:var(--max);margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.13em;font-size:1.25rem}.brand span{display:block;font-size:.55rem;letter-spacing:.38em;color:var(--muted);font-weight:500;margin-top:2px}
+    .navlinks{display:flex;align-items:center;gap:23px}.navlinks a{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#d8dadd;transition:.2s}.navlinks a:hover,.navlinks a.active{color:white}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.06);color:white;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;transition:.25s;cursor:pointer}
+    .nav-cta:hover,.button:hover{background:white;color:#08090b}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);color:white;padding:9px 12px}
+    main{min-height:75vh}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:none}}
+    .wrap{max-width:var(--max);margin:auto;padding:0 24px}.eyebrow{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);font-weight:700}.hero{min-height:78vh;display:flex;align-items:end;position:relative;overflow:hidden;background:radial-gradient(ellipse at 72% 35%,#3a4149 0%,#1b2026 28%,#0b0d10 67%);border-bottom:1px solid var(--line)}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.1)),linear-gradient(0deg,#090a0c 0%,transparent 52%);z-index:1}
+    .hero:after{content:"";position:absolute;width:65vw;height:25vw;right:-5vw;bottom:8%;border:1px solid rgba(255,255,255,.16);transform:skewY(-12deg);box-shadow:0 0 100px rgba(255,255,255,.06);border-radius:50%}
+    .hero-content{position:relative;z-index:2;padding:100px 0 75px;max-width:760px}.hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.94;letter-spacing:-.055em;margin:18px 0 20px;font-weight:900}.hero p{color:#d0d2d5;max-width:520px;font-size:1.05rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .hero-note{position:absolute;right:24px;bottom:28px;z-index:2;color:#c5c8cc;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase}
+    .section{padding:88px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}.section h2,.page-title{font-size:clamp(2.1rem,5vw,4rem);letter-spacing:-.045em;line-height:1.02;margin:10px 0 0}.lead{max-width:600px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.service{min-height:255px;padding:26px;background:linear-gradient(145deg,#1b1f24,#0e1013);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}.service:before{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(255,255,255,.11);border-radius:50%;right:-80px;top:-80px}.service h3{font-size:1.45rem;margin:0 0 6px;position:relative}.service p{color:var(--muted);margin:0;max-width:440px;position:relative}.service .num{position:absolute;top:22px;left:26px;color:#777e86;letter-spacing:.2em;font-size:.7rem}
+    .feature-band{padding:70px 0;background:linear-gradient(110deg,#171b20,#0b0d10);border-bottom:1px solid var(--line)}.feature-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px}.feature-band h2{font-size:clamp(1.8rem,4vw,3.4rem);line-height:1.05;margin:10px 0;max-width:650px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.photo-slot{aspect-ratio:16/10;background:linear-gradient(135deg,#222830,#101216);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;color:#c2c6cb;position:relative;overflow:hidden}.photo-slot:before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.09)}.photo-slot span{position:relative;max-width:240px;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase}.photo-slot small{display:block;color:#8d939b;margin-top:8px;letter-spacing:0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.panel{padding:32px;background:var(--panel);border:1px solid var(--line)}.list{padding:0;margin:22px 0 0;list-style:none}.list li{padding:13px 0;border-bottom:1px solid var(--line);color:#d5d7da}.list li:before{content:"—";color:#aeb4bb;margin-right:12px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-card{padding:28px;background:var(--panel);border:1px solid var(--line)}.contact-card p{color:var(--muted)}input,textarea,select{width:100%;padding:14px;margin:7px 0 14px;background:#090b0e;border:1px solid var(--line);color:white;font:inherit}textarea{min-height:120px;resize:vertical}label{font-size:.78rem;color:#c7cbd0}
+    footer{padding:35px 24px;color:var(--muted);font-size:.75rem}.footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;align-items:center;gap:11px;padding:12px 17px 12px 13px;border:1px solid rgba(255,255,255,.38);border-radius:999px;background:rgba(255,255,255,.13);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 8px 35px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.22);color:white;font-size:.78rem;letter-spacing:.04em;transition:.25s}
+    .wa-float:hover{transform:translateY(-3px);background:rgba(255,255,255,.22)}.wa-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(37,211,102,.2);border:1px solid rgba(37,211,102,.55);font-size:18px}
+    @media(max-width:850px){.navlinks{display:none;position:absolute;top:100%;left:0;right:0;padding:20px 24px;background:rgba(8,9,11,.97);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}.split,.contact-grid{grid-template-columns:1fr}.feature-band .wrap{display:block}.feature-band .button{margin-top:15px}}
+    @media(max-width:600px){.nav{padding:13px 18px}.wrap{padding:0 18px}.hero{min-height:72vh}.hero-content{padding:90px 0 65px}.hero-note{display:none}.section{padding:64px 0}.section-head{display:block}.grid,.gallery{grid-template-columns:1fr}.service{min-height:210px}.wa-float{right:14px;bottom:14px;padding:10px 13px}.wa-float .wa-label{display:none}.wa-icon{width:38px;height:38px}.panel,.contact-card{padding:23px}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="#home" data-page="home">WRAPNATION<span>YOUR RIDE. YOUR VISION.</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#home" data-page="home" class="active">Home</a>
+      <a href="#services" data-page="services">Services</a>
+      <a href="#projects" data-page="projects">Projects</a>
+      <a href="#configurator" data-page="configurator">Configurator</a>
+      <a href="#partnerships" data-page="partnerships">Partnerships</a>
+      <a href="#about" data-page="about">About</a>
+      <a href="#contact" data-page="contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact" data-page="contact">Start an enquiry</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">MENU</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page active" id="home">
+    <div class="hero">
+      <div class="wrap hero-content">
+        <div class="eyebrow">Cape Town · South Africa</div>
+        <h1>YOUR RIDE.<br>YOUR VISION.</h1>
+        <p>Automotive enhancement and protection. Thoughtful finishes, considered details and tailored solutions for vehicles that deserve more.</p>
+        <div class="hero-actions">
+          <a class="button" href="#services" data-page="services">Explore services</a>
+          <a class="button" href="#projects" data-page="projects">View projects</a>
+        </div>
+      </div>
+      <div class="hero-note">Automotive enhancement & protection</div>
+    </div>
+    <div class="section"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">What we do</div><h2>MAKE IT YOURS.</h2></div><p class="lead">From a subtle change in finish to complete vehicle transformations, WRAPNATION brings your vision to life.</p></div>
+      <div class="grid">
+        <article class="service"><div class="num">01 / FINISH</div><h3>Vehicle wraps</h3><p>Full and partial colour changes, with a wide range of finishes and styles.</p></article>
+        <article class="service"><div class="num">02 / PROTECTION</div><h3>Paint protection film</h3><p>Protective film solutions for owners who want to preserve their vehicle's finish.</p></article>
+        <article class="service"><div class="num">03 / DETAIL</div><h3>Custom styling</h3><p>Custom decals, accents and carbon-fibre styling details.</p></article>
+        <article class="service"><div class="num">04 / BUSINESS</div><h3>Vehicle branding</h3><p>Branding solutions for commercial vehicles, fleets and businesses.</p></article>
+      </div>
+    </div></div>
+    <div class="feature-band"><div class="wrap"><div><div class="eyebrow">For automotive businesses</div><h2>YOUR NEXT VEHICLE PARTNER.</h2><p class="lead">Explore tailored service and referral partnerships for dealerships and automotive businesses.</p></div><a class="button" href="#partnerships" data-page="partnerships">Partnership enquiries</a></div></div>
+  </section>
+
+  <section class="page" id="services">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">01 / Our capabilities</div><h1 class="page-title">SERVICES BUILT AROUND YOUR VEHICLE.</h1><p class="lead">Every project starts with understanding the vehicle, the desired finish and how it will be used. Contact us for a tailored assessment and quotation.</p>
+      <div class="grid" style="margin-top:38px">
+        <article class="service"><div class="num">01</div><h3>Full & partial vinyl wraps</h3><p>Colour changes, accent work and custom finishes.</p></article>
+        <article class="service"><div class="num">02</div><h3>Paint protection film</h3><p>PPF solutions to help protect painted surfaces from everyday road wear.</p></article>
+        <article class="service"><div class="num">03</div><h3>Custom decals & graphics</h3><p>Personalised graphics, stripes, branding and design details.</p></article>
+        <article class="service"><div class="num">04</div><h3>Carbon-fibre styling</h3><p>Refined styling accents and wrapped interior or exterior components.</p></article>
+        <article class="service"><div class="num">05</div><h3>Commercial vehicle branding</h3><p>Vehicle graphics and branding for businesses and fleets.</p></article>
+        <article class="service"><div class="num">06</div><h3>Tailored projects</h3><p>Discuss a specific idea, finish or vehicle requirement with our team.</p></article>
+      </div>
+      <div style="margin-top:30px"><a class="button" href="#contact" data-page="contact">Request a consultation</a></div>
+    </div></div>
+  </section>
+
+  <section class="page" id="projects">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">02 / Selected work</div><h1 class="page-title">THE WORK SPEAKS.</h1><p class="lead">A selection of WRAPNATION projects. Replace the image placeholders with your own completed-work photography before publishing.</p>
+      <div class="gallery" style="margin-top:34px">
+        <div class="photo-slot"><span>Lamborghini project photo<small>Replace with your original image</small></span></div>
+        <div class="photo-slot"><span>PPF installation photo<small>Replace with your original image</small></span></div>
+        <div class="photo-slot"><span>Porsche wrap photo<small>Replace with your original image</small></span></div>
+        <div class="photo-slot"><span>Carbon-fibre detail photo<small>Replace with your original image</small></span></div>
+      </div>
+      <p class="lead" style="margin-top:22px">For project enquiries, send us your vehicle details and reference images on WhatsApp.</p>
+      <a class="button" href="https://wa.me/27632950793?text=Hi%20WRAPNATION%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Discuss a project</a>
+    </div></div>
+  </section>
+
+  <section class="page" id="configurator">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">03 / Design your finish</div><h1 class="page-title">IMAGINE THE POSSIBILITIES.</h1>
+      <div class="split" style="margin-top:35px">
+        <div class="panel"><div class="eyebrow">Concept preview</div><div id="colourPreview" style="height:260px;margin-top:18px;border:1px solid var(--line);background:linear-gradient(145deg,#313a43,#101317);display:grid;place-items:center;text-align:center;padding:20px;transition:background .25s"><span id="previewText">YOUR NEXT FINISH<br><small style="color:#b6bbc1">Choose an option to preview a colour mood</small></span></div></div>
+        <div><h2 style="font-size:2rem;line-height:1.1">BUILD YOUR LOOK.</h2><p class="lead">Explore a finish direction and send your preferences to WRAPNATION. This is an enquiry preview, not a live vehicle render or final colour sample.</p>
+          <label for="vehicle">Vehicle</label><input id="vehicle" placeholder="e.g. BMW M3 2022">
+          <label for="finish">Finish</label><select id="finish"><option>Gloss</option><option>Satin</option><option>Matte</option><option>Metallic</option><option>Colour-shift</option></select>
+          <label for="colour">Colour direction</label><select id="colour"><option value="#303943">Deep graphite</option><option value="#172c42">Deep sapphire blue</option><option value="#344337">Army green</option><option value="#eeeeea">Gloss white</option><option value="#681f25">Deep burgundy</option><option value="#090a0c">Gloss black</option></select>
+          <button class="button" id="sendConfig">Send my configuration</button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="page" id="partnerships">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">04 / Business relationships</div><h1 class="page-title">A PARTNER FOR YOUR VEHICLE BUSINESS.</h1>
+      <p class="lead">WRAPNATION welcomes conversations with dealerships, automotive businesses and fleet operators looking for a reliable vehicle enhancement and protection partner.</p>
+      <div class="split" style="margin-top:38px">
+        <div class="panel"><div class="eyebrow">Partnership opportunities</div><h2 style="font-size:2rem">BUILT AROUND YOUR BUSINESS.</h2><ul class="list"><li>Vehicle wrap and PPF project referrals</li><li>Dealership and stock-preparation enquiries</li><li>Custom branding and styling requests</li><li>Ongoing service arrangements</li><li>Referral terms discussed and agreed in writing</li></ul></div>
+        <div><div class="eyebrow">Let's discuss a partnership</div><h2 style="font-size:2.3rem">LET'S CREATE VALUE TOGETHER.</h2><p class="lead">We can discuss your vehicle volumes, service requirements, turnaround expectations and a suitable commercial arrangement.</p><a class="button" href="https://wa.me/27632950793?text=Hi%20WRAPNATION%2C%20I%27d%20like%20to%20discuss%20a%20dealership%20or%20business%20partnership." target="_blank" rel="noopener">Enquire about a partnership</a></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="page" id="about">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">05 / The brand</div><h1 class="page-title">AUTOMOTIVE DETAIL. PERSONAL VISION.</h1>
+      <div class="split" style="margin-top:35px">
+        <div><p class="lead">WRAPNATION is a Cape Town-based automotive enhancement brand focused on vehicle wraps, paint protection film, custom styling and vehicle branding.</p><p class="lead">Our approach is straightforward: understand the brief, recommend a suitable solution and pay attention to the details that make the finished result stand out.</p></div>
+        <div class="panel"><div class="eyebrow">Our approach</div><ul class="list"><li>Clear project consultations</li><li>Material and finish options suited to the brief</li><li>Attention to installation detail</li><li>Written quotations and agreed scope</li><li>Workshop and mobile service enquiries</li></ul></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="page" id="contact">
+    <div class="section"><div class="wrap">
+      <div class="eyebrow">06 / Start a conversation</div><h1 class="page-title">LET'S TALK ABOUT YOUR PROJECT.</h1><p class="lead">Tell us about your vehicle and what you have in mind. We'll get back to you to discuss the next steps.</p>
+      <div class="contact-grid" style="margin-top:35px">
+        <div class="contact-card"><div class="eyebrow">Contact WRAPNATION</div><h2>YOUR RIDE. YOUR VISION.</h2><p>Phone / WhatsApp<br><strong style="color:white">063 295 0793</strong></p><p>Email<br><strong style="color:white">wrapnationcapetown@gmail.com</strong></p><p>Location<br><strong style="color:white">Cape Town and surrounding areas</strong></p><a class="button" href="https://wa.me/27632950793?text=Hi%20WRAPNATION%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+        <form class="contact-card" id="enquiryForm"><div class="eyebrow">Project enquiry</div>
+          <label for="name">Your name</label><input id="name" required placeholder="Name">
+          <label for="car">Vehicle</label><input id="car" required placeholder="Make, model and year">
+          <label for="service">Service interested in</label><select id="service"><option>Vehicle wrap</option><option>Paint protection film</option><option>Custom decals / styling</option><option>Vehicle branding</option><option>Dealership partnership</option><option>Other</option></select>
+          <label for="message">Project details</label><textarea id="message" placeholder="Tell us what you have in mind"></textarea>
+          <button class="button" type="submit">Send enquiry via WhatsApp</button>
+        </form>
+      </div>
+    </div></div>
+  </section>
+</main>
+
+<footer><div class="footer-inner"><div><strong style="color:white;letter-spacing:.15em">WRAPNATION</strong><br>YOUR RIDE. YOUR VISION.</div><div>© <span id="year"></span> WRAPNATION · Cape Town, South Africa</div></div></footer>
+
+<a class="wa-float" href="https://wa.me/27632950793?text=Hi%20WRAPNATION%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat to WRAPNATION on WhatsApp"><span class="wa-icon">✆</span><span class="wa-label">Chat with us</span></a>
+
+<script>
+  const pages = [...document.querySelectorAll('.page')];
+  const navLinks = [...document.querySelectorAll('[data-page]')];
+  const nav = document.getElementById('navlinks');
+  function showPage(id, updateHash=true) {
+    const target = document.getElementById(id) ? id : 'home';
+    pages.forEach(p => p.classList.toggle('active', p.id === target));
+    document.querySelectorAll('.navlinks a').forEach(a => a.classList.toggle('active', a.dataset.page === target));
+    nav.classList.remove('open');
+    if (updateHash) history.pushState(null, '', '#' + target);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  navLinks.forEach(link => link.addEventListener('click', e => {
+    const id = link.dataset.page;
+    if (id) { e.preventDefault(); showPage(id); }
+  }));
+  window.addEventListener('popstate', () => showPage(location.hash.slice(1) || 'home', false));
+  document.getElementById('menuBtn').addEventListener('click', () => nav.classList.toggle('open'));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const colour = document.getElementById('colour');
+  const finish = document.getElementById('finish');
+  function updatePreview() {
+    const c = colour.value;
+    const f = finish.value.toLowerCase();
+    const shine = f === 'gloss' || f === 'metallic' ? 'linear-gradient(120deg,rgba(255,255,255,.28),transparent 35%,rgba(0,0,0,.35)),' : '';
+    document.getElementById('colourPreview').style.background = shine + `linear-gradient(145deg,${c},#101317)`;
+    document.getElementById('previewText').innerHTML = `${f.toUpperCase()} / ${colour.options[colour.selectedIndex].text.toUpperCase()}<br><small style="color:#b6bbc1">Concept finish preview</small>`;
+  }
+  colour.addEventListener('change', updatePreview);
+  finish.addEventListener('change', updatePreview);
+  document.getElementById('sendConfig').addEventListener('click', () => {
+    const msg = `Hi WRAPNATION, I'd like to discuss a vehicle finish.%0A vehicle: ${encodeURIComponent(document.getElementById('vehicle').value || 'Not specified')}%0AFinish: ${encodeURIComponent(finish.value)}%0AColour direction: ${encodeURIComponent(colour.options[colour.selectedIndex].text)}`;
+    window.open('https://wa.me/27632950793?text=' + msg, '_blank', 'noopener');
+  });
+  document.getElementById('enquiryForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const msg = `Hi WRAPNATION, I'd like to make an enquiry.%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0AVehicle: ${encodeURIComponent(document.getElementById('car').value)}%0AService: ${encodeURIComponent(document.getElementById('service').value)}%0ADetails: ${encodeURIComponent(document.getElementById('message').value)}`;
+    window.open('https://wa.me/27632950793?text=' + msg, '_blank', 'noopener');
+  });
+  const initial = location.hash.slice(1);
+  if (initial && document.getElementById(initial)) showPage(initial, false);
+</script>
+</body>
+</html>
