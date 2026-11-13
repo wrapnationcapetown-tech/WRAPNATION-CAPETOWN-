@@ -32,8 +32,120 @@
 @media(max-width:900px){.nav-links{gap:15px}.nav-links a{font-size:.65rem}.service-grid{grid-template-columns:repeat(2,1fr)}.intro-grid,.config-grid,.partner-grid{gap:35px}.project-main{height:500px}.project-side article{min-height:243px}}
 @media(max-width:680px){.wrap{width:min(100% - 34px,var(--max))}.section{padding:78px 0}.nav-inner{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(8,9,10,.97);padding:20px 24px 25px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{font-size:.78rem;padding:8px 0}.nav-cta{text-align:center}.hero{min-height:690px;height:92svh}.hero:before{background:linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.18)),linear-gradient(0deg,rgba(0,0,0,.82),transparent 70%),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85") 58% center/cover}.hero-content{padding-bottom:115px}.hero h1{font-size:clamp(3.2rem,16vw,5.3rem)}.hero-meta{left:0;right:auto;text-align:left;bottom:36px}.section-head{display:block}.section-head p{margin-top:20px}.intro-grid,.config-grid,.partner-grid,.contact-grid{grid-template-columns:1fr}.intro-image{height:390px;order:2}.service-grid{grid-template-columns:1fr 1fr;gap:8px}.service-card{padding:20px;min-height:290px}.service-card h3{font-size:1.1rem}.feature-band{min-height:500px}.feature-content{padding:70px 0}.project-grid{grid-template-columns:1fr}.project-main{height:390px}.project-side{grid-template-columns:1fr 1fr;grid-template-rows:190px;gap:8px}.project-side article{min-height:190px}.project-caption{padding:50px 14px 15px}.project-caption h3{font-size:1rem}.project-caption span{font-size:.58rem}.config-visual{min-height:300px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.wa-float{right:14px;bottom:14px;padding:11px 14px}.wa-float .wa-label{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
+ /* =================================
+   WRAPNATION IN MOTION
+================================= */
+
+.social-video {
+    background: #0e1011;
+    padding: 100px 0;
+}
+
+.social-video .section-head {
+    margin-bottom: 45px;
+}
+
+.social-video .eyebrow {
+    color: #b7b7b7;
+    letter-spacing: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.social-video h2 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.social-video .section-head p {
+    color: #a5a5a5;
+    line-height: 1.8;
+    max-width: 420px;
+}
+
+.social-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+.social-video-card {
+    background: #17191a;
+    border: 1px solid #303234;
+    padding: 12px;
+    overflow: hidden;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-video-card .instagram-media {
+    background: #fff !important;
+    border: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+.social-follow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.social-follow a {
+    display: inline-block;
+    padding: 15px 24px;
+    border: 1px solid #777;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s ease;
+}
+
+.social-follow a:hover {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+}
+
+/* MOBILE DISPLAY */
+
+@media (max-width: 680px) {
+
+    .social-video {
+        padding: 65px 0;
+    }
+
+    .social-video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .social-video-card {
+        padding: 8px;
+    }
+
+    .social-follow {
+        flex-direction: column;
+    }
+
+    .social-follow a {
+        text-align: center;
+        width: 100%;
+    }
+ }
 </style>
 </head>
+ <script async src="https://www.instagram.com/embed.js"></script>
 <body>
 <header class="nav">
  <div class="wrap nav-inner">
@@ -87,6 +199,36 @@
   
  </div>
 </section>
+ <section class="section social-video" id="videos">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">WRAPNATION IN MOTION</div>
+        <h2>See the work.<br>Feel the finish.</h2>
+      </div>
+      <p>Explore our latest automotive styling, wrapping and behind-the-scenes content.</p>
+    </div>
+
+    <div class="social-video-grid">
+      <div class="social-video-card">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DcuQGtVNDvZ/"
+          data-instgrm-version="14"></blockquote>
+      </div>
+
+      <div class="social-video-card">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DcuZrWqoD8Z/"
+          data-instgrm-version="14"></blockquote>
+      </div>
+    </div>
+
+    <div class="social-follow">
+      <a href="https://www.instagram.com/wrapnationcpt/" target="_blank" rel="noopener">Instagram · @wrapnationcpt ↗</a>
+      <a href="https://www.tiktok.com/@wewrapcars_" target="_blank" rel="noopener">TikTok · @wewrapcars_ ↗</a>
+    </div>
+  </div>
+ </section>
 <section class="section config" id="configurator">
  <div class="wrap config-grid">
   <div class="config-visual reveal"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1100&q=80" alt="Sports car inspiration" loading="lazy"><div class="config-overlay"><small>Your idea starts here</small><strong>Define your finish.</strong></div></div>
