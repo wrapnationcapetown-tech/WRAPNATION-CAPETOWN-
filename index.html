@@ -116,7 +116,14 @@ menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='MENU ☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
 const wa='https://wa.me/27632950793?text=';
-function sendWhatsApp(message){window.open(wa+encodeURIComponent(message),'_blank','noopener')}
+function sendWhatsApp(message){
+  const cleanMessage = message.replace(/%0A/gi, '\n');
+  window.open(
+    wa + encodeURIComponent(cleanMessage),
+    '_blank',
+    'noopener'
+  );
+   }
 document.getElementById('plannerForm').addEventListener('submit',e=>{e.preventDefault();const service=document.getElementById('serviceChoice').value,finish=document.getElementById('finishChoice').value,vehicle=document.getElementById('vehicleChoice').value;sendWhatsApp(`Hi WRAPNATION, I'd like to discuss a project.%0AService: ${service}%0AFinish: ${finish}%0AVehicle: ${vehicle}`)});
 document.getElementById('enquiryForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value,phone=document.getElementById('phone').value,vehicle=document.getElementById('vehicle').value,interest=document.getElementById('interest').value,message=document.getElementById('message').value;sendWhatsApp(`Hi WRAPNATION, I'd like to make an enquiry.%0AName: ${name}%0APhone: ${phone}%0AVehicle: ${vehicle||'Not specified'}%0AInterested in: ${interest}%0ADetails: ${message||'Not specified'}`)});
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
